@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\EntregaCompra;
 
 class EntregaCompraController extends Controller
 {
     public function formularioCompra(){
-        return view('registroCompra');
+        if(!Auth::check()){
+            return redirect(Route('login'));
+        }else{
+            return view('registroCompra');
+        }
     }
 
     public function guardarCompra(Request $request){

@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1>Registro Direccion</h1>
 <form method="post" action="/cliente/direccion">
     @csrf
@@ -8,3 +11,4 @@
 @error("direccion")
     <b style="color:red">Complete el formulario</b>
 @enderror
+@endsection

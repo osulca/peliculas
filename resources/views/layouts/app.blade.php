@@ -30,7 +30,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cliente/direccion">Registro Direccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cliente/compra">Registro Compra</a>
+                        </li>
+                        @if(session('perfil')=='administrador')
+                        <li class="nav-item">
+                            <a class="nav-link" href="/administrador/productos/registro">Registro Productos</a>
+                        </li>
+                        @endif 
+                        @if(session('perfil')=='comprador')
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cliente/productos/lista">Ver Productos</a>
+                        </li>
+                        @endif                     
+                    @endauth    
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -73,7 +90,9 @@
         </nav>
 
         <main class="py-4">
+            <div class="container">
             @yield('content')
+            </div>
         </main>
     </div>
 </body>

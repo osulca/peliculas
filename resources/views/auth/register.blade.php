@@ -61,6 +61,17 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="perfil" class="col-md-4 col-form-label text-md-end">Elija perfil de usuario</label>
+
+                            <div class="col-md-6">
+                                <select name="perfil" id="perfil" class="form-select">
+                                    <option value="administrador">Administrador</option>
+                                    <option value="comprador">Comprador</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
